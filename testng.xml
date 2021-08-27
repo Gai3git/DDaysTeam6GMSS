@@ -31,5 +31,11 @@
       		<class  name="com.DollarDays.testCases.MyProfilePageTest"/> 
         </classes>
    	</test>
+   	
+   	 <test name="Validating AddressBookPage ">
+    	<classes>
+      		<class  name="com.DollarDays.testCases.AddressBookPageTest"/> 
+        </classes>
+   	</test> 
   
 </suite> <!-- Suite -->

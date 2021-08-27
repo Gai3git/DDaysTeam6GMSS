@@ -18,9 +18,8 @@ public class XLUtils {
 	public static XSSFSheet ws;
 	public static XSSFRow row;
 	public static XSSFCell cell;
+	
 
-	
-	
 	public static int getRowCount(String xlfileName,String xlsheet) throws IOException 
 	{
 		String xlfilePath= System.getProperty("user.dir")+"/src/test/resources/testData/" + xlfileName;
@@ -154,5 +153,32 @@ public class XLUtils {
 		}
 	}
 	
-	
+	//Get the entire data of a specified Row from a specified sheet into a single dimension array.
+	public static String[] getRowData(String xlfileName, String xlsheet, int rownum) throws IOException
+	{
+		
+		String xlfilePath= System.getProperty("user.dir")+"/src/test/resources/testData/" + xlfileName;
+		fi=new FileInputStream(xlfilePath);
+		wb=new XSSFWorkbook(fi);
+		ws=wb.getSheet(xlsheet);
+		String[] emptyArray = {};
+		try 
+		{
+		int totalcols=ws.getRow(0).getLastCellNum();
+		String[] data=new String[totalcols];
+		for(int j=0;j<totalcols;j++)
+		{
+			cell=ws.getRow(rownum).getCell(j);
+			DataFormatter  formatter=new DataFormatter();
+			data[j]=formatter.formatCellValue(cell);
+		}
+		wb.close();
+		fi.close();
+		return data;
+	}
+	catch(Exception e)
+	{
+		return emptyArray;
+	}
+}
 }
