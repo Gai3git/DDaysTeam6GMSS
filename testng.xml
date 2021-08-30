@@ -6,6 +6,12 @@
 	    <listener class-name="com.DollarDays.listeners.Listeners" />
 	</listeners>
 	
+	<test name="Validating homePage Before User is Signed in ">
+    	<classes>
+      		<class  name="com.DollarDays.testCases.HomePageTest"/> 
+        </classes>
+   	</test>
+	
 
    	<test name="Validating homePage After User is Signed in ">
     	<classes>
