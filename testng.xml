@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
+<suite name="Suite" parallel="tests"  thread-count="6">
 
 	<listeners>
 	    <listener class-name="com.DollarDays.listeners.Listeners" />
@@ -32,16 +32,18 @@
         </classes>
    	</test> 
    	
+   	<test name="Validating AddressBookPage ">
+    	<classes>
+      		<class  name="com.DollarDays.testCases.AddressBookPageTest"/> 
+        </classes>
+   	</test> 
+   	
    	<test name="Validating My Profile Page">
     	<classes>
       		<class  name="com.DollarDays.testCases.MyProfilePageTest"/> 
         </classes>
    	</test>
    	
-   	 <test name="Validating AddressBookPage ">
-    	<classes>
-      		<class  name="com.DollarDays.testCases.AddressBookPageTest"/> 
-        </classes>
-   	</test> 
+   	 
   
 </suite> <!-- Suite -->
