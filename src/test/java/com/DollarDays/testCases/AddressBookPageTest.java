@@ -407,11 +407,12 @@ public class AddressBookPageTest extends BaseClass
 	   if(confirmationBoxDisplay==true)
 		   {
 			 addressBook.clickYesButtonInConfirmationBox();
-			 Thread.sleep(1500);
+			Thread.sleep(2500);
 		     boolean AddressBoxDisplay=addressBook.checkSavedAddressBoxDisplay();
 		     System.out.println("AddressBoxDisplay is : "+AddressBoxDisplay);
 	         if(AddressBoxDisplay==false)
 	           {
+	        	// Thread.sleep(2500);
 	        	 Assert.assertTrue(true);
 	        	 logger.info("DeleteLinkYesBtn is verified successfully.");
 	        	 System.out.println("Address is  deleted on clicking yes button in confirmation box");
